@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  variableInput: string = '';
+  variableOutput: string;
+
   constructor() {}
+
+  nuevoEvento( dato: string ): void {
+    // recibe el evento del componente hijo y lo asigna a la variable
+    this.variableOutput = dato;
+  }
 
 }

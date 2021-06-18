@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Comunicacion entre componentes
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,29 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Comunicacion entre componentes</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-card>
+      <ion-item>
+        <strong>Componente Padre</strong>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Modificar variableInput: </ion-label>
+        <ion-input [(ngModel)]="variableInput"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        Cotenido variableOutput: <strong>{{ variableOutput }}</strong>
+      </ion-item>
+    </ion-card>
+    
+    <app-childcomponent
+      [variableInput] = "variableInput"
+      (nuevoEvento)="nuevoEvento( $event )"
+    >
+    </app-childcomponent>
+
 </ion-content>

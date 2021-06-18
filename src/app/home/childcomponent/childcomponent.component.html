@@ -1,0 +1,14 @@
+<ion-card>
+  <ion-item>
+    <strong>Componente Hijo</strong>
+  </ion-item>
+  
+  <ion-item>
+    Cotenido variableInput: <strong>{{ variableInput }}</strong>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Modificar variableOutput: </ion-label>
+    <ion-input [(ngModel)]="variableOutput" (input)="enviarEvento()"></ion-input>
+  </ion-item>
+</ion-card>
